@@ -15,7 +15,7 @@ checkout eg. a commit hash, and don't have to be a branch or tag.
 
 ### usage:
 ```
-docker build -t buzzware/pycom-docker-firmware-build . && sudo docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build build board-type your-project-version-code [micropython-sigfox-git-tag] [esp-idf-git-tag]
+docker build -t buzzware/pycom-docker-firmware-build . && docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build build board-type your-project-version-code [micropython-sigfox-git-tag] [esp-idf-git-tag]
 ```
 where board in `WIPY LOPY SIPY GPY FIPY LOPY4` and your-project-version-code is a tag for your project eg. 
 output file example: `output/LoPy-1.20.2.rc10-demo.tar.gz`
@@ -33,11 +33,11 @@ docker build -t buzzware/pycom-docker-firmware-build . && docker run -v `pwd`:/o
 If you have your MicroPython project in the current directory `.` just type:
 
 ```
-sudo docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build  build LOPY4 myproject
+docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build  build LOPY4 myproject
 ```
 For building against a specific revision (ex:v1.20.0.rc0 idf_v3.1) you can use:
 ```
-sudo docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build  build FIPY myproject v1.20.0.rc0 idf_v3.1
+docker run -v `pwd`:/opt/frozen -it buzzware/pycom-docker-firmware-build  build FIPY myproject v1.20.0.rc0 idf_v3.1
 ```
 
 
